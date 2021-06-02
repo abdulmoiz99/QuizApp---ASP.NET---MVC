@@ -89,18 +89,39 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="resources\css\QuizPageStyle.css" />
+    <Content Include="resources\css\style.css" />
+    <Content Include="resources\img\logo.png" />
+    <Content Include="resources\img\moiz.jpg" />
+    <Content Include="resources\img\naqqash.jpg" />
+    <Content Include="resources\img\shaarif.jpg" />
+    <Content Include="resources\img\teacher.jpg" />
+    <Content Include="resources\js\javascript.js" />
+    <Content Include="Vendors\css\grid.css" />
+    <Content Include="Vendors\css\ionicons.min.css" />
+    <Content Include="Vendors\css\normalize.css" />
+    <Content Include="Vendors\fonts\ionicons.svg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Account.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\Account\_LayoutPage1.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Vendors\fonts\ionicons.eot" />
+    <Content Include="Vendors\fonts\ionicons.ttf" />
+    <Content Include="Vendors\fonts\ionicons.woff" />
+    <Content Include="Vendors\fonts\ionicons.woff2" />
+    <Content Include="Views\Account\LoginError.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,8 +131,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
