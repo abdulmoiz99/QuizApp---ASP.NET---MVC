@@ -10,37 +10,39 @@ namespace QuizAppASP.Controllers
 {
     public class AccountController : Controller
     {
-        SqlConnection con = new SqlConnection();
-        SqlCommand cmd = new SqlCommand();
-        SqlDataReader dr;
-
+       
         [HttpGet]
         public ActionResult Login()
         {
             return View();
         }
+        [HttpGet]
+        public ActionResult Register()
+        {
+            return View();
+        }
         void ConnectionString()
         {
-            con.ConnectionString = @"Data Source=ABDUL-MOIZ\SQLEXPRESS;Initial Catalog=TestDatabae;Integrated Security=True;Pooling=False";
         }
         [HttpPost]
         public ActionResult Verify(Account account)
         {
-            ConnectionString();
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = "select * from login where Name = '" + account.email + "' and Password = '" + account.Password + "'";
-            dr = cmd.ExecuteReader();
             if (dr.Read())
             {
-                con.Close();
-                return View("Create");
+              
             }
             else
             {
-                con.Close();
-                return View("LoginError");
+              
             }
+        }
+        [HttpPost]
+        public ActionResult RegisterUser(Account account)
+        {
+            string query = "Insert Into Login (LoginFirstName             ,LoginLastName             ,LoginEmail            ,LoginPassword              ,LoginActive  )" +
+                                      " values('" + account.FirstName + "','" + account.LastName + "','" + account.Email + "','" + account.Password + "',1 )";
+            SQL.NonScalarQuery(query);
+            return View("Login");
         }
     }
 }

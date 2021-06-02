@@ -14,8 +14,23 @@
     <script src="~/resources/js/javascript.js"></script>
 </head>
 <body>
+    <nav>
+        <div class="row">
+            <a href="index.html">
+                <img href="#" src="~/resources/img/logo.png" alt="Quiz Time Logo" class="logo">
+            </a>
+            <ul class="home-nav">
+                <li><a href="~/about.html">About</a></li>
+                <li><a href="~/register.cshtml">Register</a></li>
+                <li id="btn-selected"><a href="#">Login</a></li>
+            </ul>
+        </div>
+    </nav>
     <div>
         @RenderBody()
+    </div>
+    <div class="name">
+        <footer><p><small>B17101001 Abdul Moiz⠀⠀|⠀⠀B17101066 Muhammad Shaarif Shahid⠀⠀|⠀⠀B17101073 Naqqash Khan</small></p></footer>
     </div>
 </body>
 </html>
