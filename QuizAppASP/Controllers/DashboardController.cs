@@ -6,16 +6,13 @@ using System.Web.Mvc;
 
 namespace QuizAppASP.Controllers
 {
-    public class HomeController : Controller
+    public class DashboardController : Controller
     {
-        // GET: Home
-        public ActionResult Homepage()
+        // GET: Dashboard
+        [HttpPost]
+        public ActionResult Dashboard()
         {
             return View();
-        }
-        public ActionResult ShowDashboard()
-        {
-            return View("Register");
         }
     }
 }
