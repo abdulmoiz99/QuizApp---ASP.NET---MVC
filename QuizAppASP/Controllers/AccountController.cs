@@ -27,13 +27,14 @@ namespace QuizAppASP.Controllers
         [HttpPost]
         public ActionResult Verify(Account account)
         {
-            if (dr.Read())
+            if (Main.verifyUser(account.Email,account.Password))
             {
-              
+                return View("~/Views/Home/Homepage.cshtml");
+
             }
             else
             {
-              
+               return View("Register");
             }
         }
         [HttpPost]

@@ -106,6 +106,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -117,7 +118,6 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
-    <Content Include="Views\Account\_LayoutPage1.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Vendors\fonts\ionicons.eot" />
     <Content Include="Vendors\fonts\ionicons.ttf" />
@@ -125,6 +125,8 @@
     <Content Include="Vendors\fonts\ionicons.woff2" />
     <Content Include="Views\Account\LoginError.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\Homepage.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage1.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
