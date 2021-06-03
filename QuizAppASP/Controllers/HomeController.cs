@@ -17,5 +17,9 @@ namespace QuizAppASP.Controllers
         {
             return View("Register");
         }
+        public ActionResult About()
+        {
+            return View("About");
+        }
     }
 }

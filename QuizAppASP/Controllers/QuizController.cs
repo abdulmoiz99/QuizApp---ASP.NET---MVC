@@ -6,11 +6,10 @@ using System.Web.Mvc;
 
 namespace QuizAppASP.Controllers
 {
-    public class DashboardController : Controller
+    public class QuizController : Controller
     {
-        // GET: Dashboard
-        [HttpGet]
-        public ActionResult Dashboard()
+        // GET: Quiz
+        public ActionResult Join()
         {
             return View();
         }

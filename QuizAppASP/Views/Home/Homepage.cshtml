@@ -8,8 +8,8 @@
         <p class="quiz_heading"><b>QUIZ TIME</b></p>
     </div>
     <div class="btnrow">
-        <a id="homepage-btn" name="Homepage" href="@Url.Action("ShowDashboard","HomeController")">Dashboard</a>
+        <a id="homepage-btn" href="@Url.Action("Dashboard", "Dashboard")">Dashboard</a>
         <a id="homepage-btn" href="#">Create Quiz</a>
-        <a id="homepage-btn" href="joinquiz.html">Join Quiz</a>
+        <a id="homepage-btn" href="@Url.Action("Join", "Quiz")">Join Quiz</a>
     </div>
 </section>

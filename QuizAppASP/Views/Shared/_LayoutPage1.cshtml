@@ -16,12 +16,12 @@
 <body>
     <nav>
         <div class="row">
-            <a href="index.html">
+            <a  href="@Url.Action("About", "Home")">
                 <img href="#" src="~/resources/img/logo.png" alt="Quiz Time Logo" class="logo">
             </a>
             <ul class="home-nav">
-                <li><a href="~/about.html">About</a></li>
-                <li><a href="~/register.cshtml">Register</a></li>
+                <li><a  href="@Url.Action("About", "Home")">About</a></li>
+                <li><a  href="@Url.Action("Register", "Account")">Register</a></li>
                 <li id="btn-selected"><a href="#">Login</a></li>
             </ul>
         </div>
