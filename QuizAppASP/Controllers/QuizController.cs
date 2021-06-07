@@ -13,5 +13,10 @@ namespace QuizAppASP.Controllers
         {
             return View();
         }
+
+        public ActionResult QuizPage()
+        {
+            return View();
+        }
     }
 }

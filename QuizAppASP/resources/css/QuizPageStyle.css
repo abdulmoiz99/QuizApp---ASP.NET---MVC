@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,700&display=swap");
+@import url('QuizPageStyle.css');
 
 body {
   margin: 0;
@@ -19,7 +20,7 @@ body {
 }
 
 .center h1 {
-  text-align: center;
+  text-align: center;   
   padding: 0 0 20px 0;
   border-bottom: 1px solid silver;
   margin: 30px 0;

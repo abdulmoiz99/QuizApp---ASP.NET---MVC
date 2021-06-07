@@ -10,7 +10,6 @@ namespace QuizAppASP.Controllers
 {
     public class AccountController : Controller
     {
-
         [HttpGet]
         public ActionResult Login()
         {
@@ -21,16 +20,12 @@ namespace QuizAppASP.Controllers
         {
             return View();
         }
-        void ConnectionString()
-        {
-        }
         [HttpPost]
         public ActionResult Verify(Account account)
         {
             if (Main.verifyUser(account.Email, account.Password))
             {
                 return View("~/Views/Home/Homepage.cshtml");
-
             }
             else
             {
@@ -42,8 +37,10 @@ namespace QuizAppASP.Controllers
         {
             string query = "Insert Into Login (LoginFirstName             ,LoginLastName             ,LoginEmail            ,LoginPassword              ,LoginActive  )" +
                                       " values('" + account.FirstName + "','" + account.LastName + "','" + account.Email + "','" + account.Password + "',1 )";
+
             SQL.NonScalarQuery(query);
             return View("Login");
+                    
         }
         public ActionResult Users(Account account)
         {

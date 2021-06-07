@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "QuizPage";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div id="ScorePopup" class="popup">
+    <span class="popupText">Quiz Attempted Successfully.</span>
+    <br>
+    <span class="popupText">Score: 0/1</span>
+    <br>
+
+    <input class="input" type="submit" value="Dashboard" onclick="closePopup()" />
+
+</div>
+<div class="center">
+    <h1>Quiz</h1>
+    <form onsubmit="return false">
+        <div class="Question">What is the first capital of Pakistan?</div>
+        <div class="row">
+            <label class="container">
+                Karachi
+                <input class="" type="radio" checked="checked" name="radio">
+                <span class="checkmark"></span>
+            </label>
+
+
+            <label class="container">
+                Lahore
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+            </label>
+
+            <label class="container">
+                Islamabad
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                Multan
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+            </label>
+            <input class="input" type="submit" value="Next" onclick="showPopup()" />
+        </div>
+
+</div>
+    </form>
+    </div>
