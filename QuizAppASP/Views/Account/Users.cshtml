@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Users";
-    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
 }
 
 <h2>Users</h2>
@@ -11,26 +11,28 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-<div id="wrapper">
-    <h1>Registered Users</h1>
+<div class="row">
+    <div id="wrapper">
+        <h1>Responses</h1>
 
-    <table class="tableCenter">
-        <thead>
-            <tr>
-                <th><span>First Name</span></th>
-                <th><span>Last Name</span></th>
-                <th><span>Email</span></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var user in Model)
-            {
+        <table class="tableCenter">
+            <thead>
                 <tr>
-                    <td>@user.FirstName</td>
-                    <td>@user.LastName</td>
-                    <td>@user.Email</td>
+                    <th><span>First Name</span></th>
+                    <th><span>Last Name</span></th>
+                    <th><span>Email</span></th>
                 </tr>
-            }
-        </tbody>
-    </table>
-</div> 
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.FirstName</td>
+                        <td>@user.LastName</td>
+                        <td>@user.Email</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

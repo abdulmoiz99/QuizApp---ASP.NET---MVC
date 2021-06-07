@@ -16,13 +16,15 @@
 <body>
     <nav>
         <div class="row">
-            <a  href="@Url.Action("Index", "Home")">
-                <img href="#" src="~/resources/img/logo.png" alt="Quiz Time Logo" class="logo">
+            <a href="@Url.Action("Homepage", "Home")">
+                <img href="#"
+                     src="~/resources/img/logo.png"
+                     alt="Quiz Time Logo"
+                     class="logo" />
             </a>
             <ul class="home-nav">
-                <li><a  href="@Url.Action("About", "Home")">About</a></li>
-                <li><a  href="@Url.Action("Register", "Account")">Register</a></li>
-                <li><a  href="@Url.Action("Login", "Account")">Login</a></li>
+                <li><a href=@Url.Action("ChangePassword", "Account")>Change Password</a></li>
+                <li><a href=@Url.Action("Login", "Account")>Log out</a></li>
             </ul>
         </div>
     </nav>
@@ -30,7 +32,14 @@
         @RenderBody()
     </div>
     <div class="name">
-        <footer><p><small>B17101001 Abdul Moiz⠀⠀|⠀⠀B17101066 Muhammad Shaarif Shahid⠀⠀|⠀⠀B17101073 Naqqash Khan</small></p></footer>
+        <footer>
+            <p>
+                <small>
+                    B17101001 Abdul Moiz⠀⠀|⠀⠀B17101066 Muhammad Shaarif
+                    Shahid⠀⠀|⠀⠀B17101073 Naqqash Khan
+                </small>
+            </p>
+        </footer>
     </div>
 </body>
 </html>

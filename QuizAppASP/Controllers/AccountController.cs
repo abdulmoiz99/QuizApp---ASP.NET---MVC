@@ -20,6 +20,11 @@ namespace QuizAppASP.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
         [HttpPost]
         public ActionResult Verify(Account account)
         {

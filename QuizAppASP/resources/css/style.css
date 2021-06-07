@@ -234,9 +234,12 @@ p {
 
 .signup-form {
     width: 800px;
-    margin: 30px auto 0px auto;
-    padding: 30px 0;
-    position: relative;
+    margin: 0px auto 0px auto;
+    padding: 0px 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
     .signup-form h2 {
@@ -389,9 +392,12 @@ p {
 
 .signin-form {
     width: 600px;
-    margin: 100px auto 0px auto;
-    padding: 30px 0;
-    position: relative;
+    margin: 0px auto 0px auto;
+    padding: 0px 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
     .signin-form h2 {
@@ -521,9 +527,10 @@ p {
 
 .changepassword-form {
     width: 600px;
-    margin: 100px auto 0px auto;
-    padding: 30px 0;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
     .changepassword-form h2 {
@@ -635,7 +642,7 @@ p {
     text-align: center;
     margin-top: 5rem;
     font-size: 60px;
-    color: #ea7a15;
+    color: #555;
     margin-bottom: 25px;
 }
 

@@ -21,5 +21,10 @@ namespace QuizAppASP.Controllers
         {
             return View("About");
         }
+
+        public ActionResult Index()
+        {
+            return View("Index");
+        }
     }
 }
