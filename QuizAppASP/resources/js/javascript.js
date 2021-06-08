@@ -12,4 +12,5 @@
   function closePopup()
   {
     document.getElementById("ScorePopup").style.display = "none";
-  }
+}
+
