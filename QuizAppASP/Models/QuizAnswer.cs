@@ -15,6 +15,6 @@ namespace QuizAppASP.Models
         public int QuizQuestionId { get; set; }
         public bool IsCorrect { get; set; }
         [Required]
-        public string Description { get; set; }
+        public string Answer { get; set; }
     }
 }

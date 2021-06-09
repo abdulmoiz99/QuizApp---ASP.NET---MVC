@@ -167,6 +167,10 @@
     <Compile Include="Migrations\202106091546369_RemoveIdFromQuizScoresTable.designer.cs">
       <DependentUpon>202106091546369_RemoveIdFromQuizScoresTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106091601467_UserTableUpdated.cs" />
+    <Compile Include="Migrations\202106091601467_UserTableUpdated.designer.cs">
+      <DependentUpon>202106091601467_UserTableUpdated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\QuizAnswer.cs" />
@@ -240,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106091546369_RemoveIdFromQuizScoresTable.resx">
       <DependentUpon>202106091546369_RemoveIdFromQuizScoresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106091601467_UserTableUpdated.resx">
+      <DependentUpon>202106091601467_UserTableUpdated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
