@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -43,6 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -109,11 +116,64 @@
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuizController.cs" />
+    <Compile Include="EntityConfigurations\AccountConfiguration.cs" />
+    <Compile Include="EntityConfigurations\QuizMasterConfiguration.cs" />
+    <Compile Include="EntityConfigurations\QuizScoreConfiguration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Main.cs" />
+    <Compile Include="Migrations\202106091354292_CreateAccountsTable.cs" />
+    <Compile Include="Migrations\202106091354292_CreateAccountsTable.designer.cs">
+      <DependentUpon>202106091354292_CreateAccountsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106091410276_ModifyColumnsToRequiredInAccountsTable.cs" />
+    <Compile Include="Migrations\202106091410276_ModifyColumnsToRequiredInAccountsTable.designer.cs">
+      <DependentUpon>202106091410276_ModifyColumnsToRequiredInAccountsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106091413310_ModifyColumnsToRequiredInAccountsTable1.cs" />
+    <Compile Include="Migrations\202106091413310_ModifyColumnsToRequiredInAccountsTable1.designer.cs">
+      <DependentUpon>202106091413310_ModifyColumnsToRequiredInAccountsTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106091421089_AddQuizMasterColumn.cs" />
+    <Compile Include="Migrations\202106091421089_AddQuizMasterColumn.designer.cs">
+      <DependentUpon>202106091421089_AddQuizMasterColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106091444286_AddQuizQuestionTable.cs" />
+    <Compile Include="Migrations\202106091444286_AddQuizQuestionTable.designer.cs">
+      <DependentUpon>202106091444286_AddQuizQuestionTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106091445157_AddQuizQuestionTable1.cs" />
+    <Compile Include="Migrations\202106091445157_AddQuizQuestionTable1.designer.cs">
+      <DependentUpon>202106091445157_AddQuizQuestionTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106091449093_AddQuizAnswerTable.cs" />
+    <Compile Include="Migrations\202106091449093_AddQuizAnswerTable.designer.cs">
+      <DependentUpon>202106091449093_AddQuizAnswerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106091503192_AddQuizScoreTable.cs" />
+    <Compile Include="Migrations\202106091503192_AddQuizScoreTable.designer.cs">
+      <DependentUpon>202106091503192_AddQuizScoreTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106091521197_AddQuestionColumnToQuestionTable.cs" />
+    <Compile Include="Migrations\202106091521197_AddQuestionColumnToQuestionTable.designer.cs">
+      <DependentUpon>202106091521197_AddQuestionColumnToQuestionTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106091539028_AddOptionColumnToAnswerTable.cs" />
+    <Compile Include="Migrations\202106091539028_AddOptionColumnToAnswerTable.designer.cs">
+      <DependentUpon>202106091539028_AddOptionColumnToAnswerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106091546369_RemoveIdFromQuizScoresTable.cs" />
+    <Compile Include="Migrations\202106091546369_RemoveIdFromQuizScoresTable.designer.cs">
+      <DependentUpon>202106091546369_RemoveIdFromQuizScoresTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\QuizAnswer.cs" />
+    <Compile Include="Models\QuizDbContext.cs" />
+    <Compile Include="Models\QuizMaster.cs" />
+    <Compile Include="Models\QuizQuestion.cs" />
+    <Compile Include="Models\QuizScore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQL.cs" />
   </ItemGroup>
@@ -147,6 +207,41 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106091354292_CreateAccountsTable.resx">
+      <DependentUpon>202106091354292_CreateAccountsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106091410276_ModifyColumnsToRequiredInAccountsTable.resx">
+      <DependentUpon>202106091410276_ModifyColumnsToRequiredInAccountsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106091413310_ModifyColumnsToRequiredInAccountsTable1.resx">
+      <DependentUpon>202106091413310_ModifyColumnsToRequiredInAccountsTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106091421089_AddQuizMasterColumn.resx">
+      <DependentUpon>202106091421089_AddQuizMasterColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106091444286_AddQuizQuestionTable.resx">
+      <DependentUpon>202106091444286_AddQuizQuestionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106091445157_AddQuizQuestionTable1.resx">
+      <DependentUpon>202106091445157_AddQuizQuestionTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106091449093_AddQuizAnswerTable.resx">
+      <DependentUpon>202106091449093_AddQuizAnswerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106091503192_AddQuizScoreTable.resx">
+      <DependentUpon>202106091503192_AddQuizScoreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106091521197_AddQuestionColumnToQuestionTable.resx">
+      <DependentUpon>202106091521197_AddQuestionColumnToQuestionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106091539028_AddOptionColumnToAnswerTable.resx">
+      <DependentUpon>202106091539028_AddOptionColumnToAnswerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106091546369_RemoveIdFromQuizScoresTable.resx">
+      <DependentUpon>202106091546369_RemoveIdFromQuizScoresTable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -177,6 +272,8 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
   <Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" Condition="!$(Disable_CopyWebApplication) And '$(OutDir)' != '$(OutputPath)'">
     <ItemGroup>
@@ -185,6 +282,7 @@
     <MakeDir Directories="$(WebProjectOutputDir)\bin\roslyn" />
     <Copy SourceFiles="@(RoslynFiles)" DestinationFolder="$(WebProjectOutputDir)\bin\roslyn" SkipUnchangedFiles="true" Retries="$(CopyRetryCount)" RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
