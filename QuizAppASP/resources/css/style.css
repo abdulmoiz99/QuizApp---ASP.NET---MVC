@@ -891,6 +891,7 @@ th {
     border-radius: 10px;
     transition: 0.5s;
     text-align: center;
+    display:none;
 }
 
     .popup .popupText {
